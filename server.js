@@ -13,20 +13,9 @@ app.use(cors());
 
 dotenv.config();
 
-//connecting to db
 connectToDB();
 app.use(express.json());
 
-//Endpoints
-
-// app.get("/api/chat", (req, res) => {
-//   res.send(chats);
-// });
-
-// app.get("/api/chat/:id", (req, res) => {
-//   const chat = chats.filter((chat) => chat._id === req.params.id);
-//   res.send(chat);
-// });
 
 app.use("/api/user", userRoutes);
 app.use("/api/chat", chatRoutes);
