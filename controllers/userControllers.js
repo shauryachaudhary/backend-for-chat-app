@@ -9,11 +9,11 @@ const registerUser = asyncHandler(async (req, res) => {
   
   
 
-  if (!name || !email || !password ) {
+  if (!name || !email || !password || !avatar) {
     res.status(400);
     throw new Error("All Fields are required!");
   }
-  const userExists = await User.findOne({ email });
+  const userExists = await User.find({ email });
 
   if (userExists) {
     res.status(400);
